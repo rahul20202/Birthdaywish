@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Banana-Loving Sis! 🐒🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 25%, #a8edea 50%, #fed6e3 75%, #ff9a9e 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Monkey mayhem background */
+        .bg-monkey-party {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .monkey {
+            position: absolute;
+            font-size: 3rem;
+            animation: monkeyDance 8s ease-in-out infinite;
+        }
+
+        .monkey:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; }
+        .monkey:nth-child(2) { top: 50%; right: 10%; animation-delay: 2s; transform: scaleX(-1); }
+        .monkey:nth-child(3) { top: 75%; left: 15%; animation-delay: 4s; }
+        .monkey:nth-child(4) { top: 25%; right: 20%; animation-delay: 1s; }
+        .monkey:nth-child(5) { top: 60%; left: 25%; animation-delay: 3s; }
+        .monkey:nth-child(6) { top: 10%; right: 5%; animation-delay: 5s; transform: scale(1.2); }
+
+        @keyframes monkeyDance {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-15px) rotate(10deg) scale(1.1); }
+            50% { transform: translateY(10px) rotate(-5deg) scale(0.9); }
+            75% { transform: translateY(-10px) rotate(15deg) scale(1.15); }
+        }
+
+        .banana {
+            position: absolute;
+            font-size: 2rem;
+            color: #f9ca24;
+            animation: bananaFall 10s linear infinite;
+        }
+
+        @keyframes bananaFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 60px 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            border: 3px solid rgba(255,255,255,0.5);
+            animation: wobbleIn 1.2s ease-out;
+            max-width: 750px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .birthday-card::before {
+            content: '🐒';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 4rem;
+            animation: sneakyMonkey 3s ease-in-out infinite;
+        }
+
+        @keyframes wobbleIn {
+            0% { opacity: 0; transform: scale(0.5) rotate(-5deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes sneakyMonkey {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(-20px) rotate(-10deg); }
+        }
+
+        .cake {
+            font-size: 5rem;
+            margin-bottom: 15px;
+            animation: cakeShake 3s infinite;
+        }
+
+        @keyframes cakeShake {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30%, 50%, 70%, 90% { transform: rotate(-3deg); }
+            20%, 40%, 60%, 80% { transform: rotate(3deg); }
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            animation: rainbow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #2d3436;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .monkey-warning {
+            font-size: 1.1rem;
+            color: #e17055;
+            margin-bottom: 30px;
+            font-style: italic;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: #636e72;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .highlight {
+            color: #e84393;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .fun-fact {
+            background: #ffeaa7;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 6px solid #fdcb6e;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff7675, #fd79a8, #00b894);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(255, 118, 117, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 45px rgba(255, 118, 117, 0.6);
+        }
+
+        .cta-button::after {
+            content: '🐒';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .hearts-monkeys {
+            font-size: 2.5rem;
+            margin-top: 30px;
+            animation: monkeyParty 2s ease-in-out infinite;
+        }
+
+        @keyframes monkeyParty {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.1); }
+            75% { transform: rotate(-5deg) scale(1.1); }
+        }
+
+        @media (max-width: 768px) {
+            .title { font-size: 3.2rem; }
+            .cake { font-size: 3.5rem; }
+            .birthday-card { padding: 40px 25px; margin: 20px; }
+            .message { font-size: 1.2rem; }
+            .monkey { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-monkey-party">
+        <div class="monkey">🐒</div>
+        <div class="monkey">🐵</div>
+        <div class="monkey">🦍</div>
+        <div class="monkey">🐒</div>
+        <div class="monkey">🐵</div>
+        <div class="monkey">🦧</div>
+        
+        <!-- Flying bananas -->
+        <div class="banana" style="left: 10%; animation-delay: 0s;">🍌</div>
+        <div class="banana" style="left: 25%; animation-delay: 2s;">🍌</div>
+        <div class="banana" style="left: 40%; animation-delay: 4s;">🍌</div>
+        <div class="banana" style="left: 60%; animation-delay: 6s;">🍌</div>
+        <div class="banana" style="left: 80%; animation-delay: 8s;">🍌</div>
+    </div>
+
+    <div class="container">
+        <div class="birthday-card">
+            <div class="cake">🎂🐒🍌</div>
+            <h1 class="title">Happy Birthday, Sis!</h1>
+            <p class="subtitle">The Monkey Business Queen 🐵👑</p>
+            
+            <div class="monkey-warning">
+                ⚠️ Warning: This page contains 100% more monkeys than usual! 🐒
+            </div>
+            
+            <div class="message">
+                Dear <span class="highlight">Banana-obsessed Sister</span>,<br><br>
+                
+                You're not just getting older, you're leveling up to <span class="highlight">LEGENDARY BANANA QUEEN</span> status! 🐒👑<br><br>
+                
+                Fun fact: Monkeys think you're cooler than a barrel of bananas (which is A LOT of bananas 🍌🍌🍌). 
+                Even the cake is scared of you - look at it shaking! 🎂😱<br><br>
+                
+                May your birthday be filled with:
+                - Zero monkey business (except the fun kind)
+                - Infinite cake supplies 
+                - And enough bananas to make King Kong jealous! 🦍
+            </div>
+            
+            <div class="fun-fact">
+                🐒 <strong>MONKEY WISDOM:</strong> "Sis is the best sister since sliced bananas!" 🍌
+            </div>
+            
+            <a href="#" class="cta-button" onclick="monkeyChaos()">RELEASE THE MONKEYS! 🐵</a>
+            
+            <div class="hearts-monkeys">
+                🐒💖🐵💕🦍💗🐒💖🍌
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function monkeyChaos() {
+            // Monkey explosion!
+            for(let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const monkey = document.createElement('div');
+                    const monkeyTypes = ['🐒', '🐵', '🦍', '🦧', '🙈', '🙉', '🙊'];
+                    monkey.innerHTML = monkeyTypes[Math.floor(Math.random() * monkeyTypes.length)];
+                    monkey.style.position = 'fixed';
+                    monkey.style.left = Math.random() * 100 + 'vw';
+                    monkey.style.top = '100vh';
+                    monkey.style.fontSize = Math.random() * 2 + 1.5 + 'rem';
+                    monkey.style.pointerEvents = 'none';
+                    monkey.style.zIndex = '1000';
+                    monkey.style.animation = 'monkeyDance 2s linear forwards';
+                    document.body.appendChild(monkey);
+                    
+                    setTimeout(() => monkey.remove(), 4000);
+                }, i * 80);
+            }
+            
+            // Banana storm
+            for(let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const banana = document.createElement('div');
+                    banana.innerHTML = '🍌';
+                    banana.style.position = 'fixed';
+                    banana.style.left = Math.random() * 100 + 'vw';
+                    banana.style.top = '-50px';
+                    banana.style.fontSize = '2rem';
+                    banana.style.pointerEvents = 'none';
+                    banana.style.zIndex = '1000';
+                    banana.style.animation = 'bananaFall 4s linear forwards';
+                    document.body.appendChild(banana);
+                    
+                    setTimeout(() => banana.remove(), 4000);
+                }, i * 100);
+            }
+            
+            // Shake everything!
+            document.querySelector('.birthday-card').style.animation = 'wobbleIn 0.5s infinite';
+            document.querySelector('.cake').style.animation = 'cakeShake 0.3s infinite';
+            
+            setTimeout(() => {
+                document.querySelector('.birthday-card').style.animation = 'wobbleIn 1.2s ease-out';
+                document.querySelector('.cake').style.animation = 'cakeShake 3s infinite';
+            }, 1500);
+            
+            // Funny alert
+            setTimeout(() => {
+                alert('🐒 MONKEYS APPROVED! 🐵\n\nHappy Birthday Sis! You\'re bananas-ly awesome! 🍌😍\nP.S. Don\'t eat all the cake - leave some for the monkeys!');
+            }, 500);
+        }
+
+        // Monkey follows mouse
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            if(Math.random() < 0.1) { // 10% chance
+                const tinyMonkey = document.createElement('div');
+                tinyMonkey.innerHTML = '🙈';
+                tinyMonkey.style.position = 'fixed';
+                tinyMonkey.style.left = mouseX + 20 + 'px';
+                tinyMonkey.style.top = mouseY + 20 + 'px';
+                tinyMonkey.style.fontSize = '1rem';
+                tinyMonkey.style.pointerEvents = 'none';
+                tinyMonkey.style.zIndex = '999';
+                tinyMonkey.style.animation = 'monkeyDance 1s ease-out forwards';
+                document.body.appendChild(tinyMonkey);
+                
+                setTimeout(() => tinyMonkey.remove(), 1500);
+            }
+        });
+    </script>
+</body>
+</html>
